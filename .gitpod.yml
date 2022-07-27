@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+# vnc
+- port: 6080
+# open-preview is too small to reliably use, especially on smaller viewports
+  onOpen: open-browser
+- port: 5900
+  onOpen: ignore
+
+tasks:
+- init: ./aero.py --no-run
+  command: ./aero.py --only-run
